@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: ecommerce-api
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_db
+    username: ecommerce_user
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 20
+    show-sql: false
+  
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+jwt:
+  secret: xqM6QX5kWm9mQ2VhM1JqS2hZV3B6dDVmQ0x4aVJqZzVqQ2pOUjJ4cWZqQnV4Q0NnZmxVQjRrM1JtT0N2V3l2Q1d0S3E4Z1R2Qk5Wc2JQeWdLa1E9PQ==
+  expiration: 86400000
+
+logging:
+  level:
+    root: INFO
+    com.ecommerce: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
