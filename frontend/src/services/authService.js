@@ -2,11 +2,13 @@ import api from './api'
 
 export const authService = {
   login(email, password) {
-    return api.post('/auth/login', { email, password })
+  alert('login called with email: ' + email + ' and password: ' + password);
+    return api.post('/api/auth/login', { email, password })
+
   },
 
   register(email, password, firstName, lastName) {
-    return api.post('/auth/register', {
+    return api.post('/api/auth/register', {
       email,
       password,
       firstName,
