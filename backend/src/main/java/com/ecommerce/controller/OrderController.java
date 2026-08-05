@@ -13,7 +13,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/orders")
 public class OrderController {
 
     @Autowired
