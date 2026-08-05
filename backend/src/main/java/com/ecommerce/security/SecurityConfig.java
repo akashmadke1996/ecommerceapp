@@ -58,8 +58,9 @@ public class SecurityConfig {
             .exceptionHandling(exHandler -> {})
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/products/**").permitAll()
+                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/products/**").permitAll()
+                    .requestMatchers("/orders/**").permitAll()
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated()
             )
