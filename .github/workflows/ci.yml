@@ -14,7 +14,7 @@ on:
 jobs:
 
   backend:
-    name: Backend Build & Test
+    name: Backend Build, Test & SonarQube
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,15 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew clean build
+
+      - name: SonarQube analysis
+        working-directory: backend
+        run: ./gradlew sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
 
   frontend:
     name: Frontend Build
