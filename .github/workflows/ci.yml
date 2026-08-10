@@ -30,14 +30,6 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Verify backend files
-        working-directory: backend
-        run: |
-          pwd
-          ls -la
-          ls -la gradlew
-          ls -la gradle/wrapper
-
       - name: Build Backend
         working-directory: backend
         run: |
