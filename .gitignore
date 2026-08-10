@@ -2,7 +2,6 @@
 build/
 .gradle/
 *.class
-*.jar
 *.war
 *.nar
 *.ear
@@ -14,6 +13,10 @@ build/
 .settings/
 *.iml
 .idea/
+
+# Gradle Wrapper - MUST be committed
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
 
 # Node/Frontend
 node_modules/
