@@ -38,7 +38,11 @@ public class SecurityConfig {
                 "http://localhost:3001",
                 "http://localhost:3000",
                 "http://localhost",
-                "http://localhost:80"
+                "http://localhost:80",
+                System.getenv().getOrDefault(
+                        "FRONTEND_URL",
+                        "http://localhost:5173"
+                )
         ));
        // configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost", "http://localhost:80"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
