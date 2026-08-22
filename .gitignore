@@ -64,8 +64,8 @@ logs/
 .env.local
 
 # Database
-*.sql
-!db/migration/*.sql
+.sql
+db/migration/*.sql
 
 # Docker
 .dockerignore
